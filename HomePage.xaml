@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="noteApp.HomePage"
+             >
+    <VerticalStackLayout>
+            <Label Text="NOTES" 
+                   FontSize="50" 
+                   HorizontalOptions="Start" 
+                   FontFamily="TNRBI"
+                   Margin="30,20"
+                   TextColor="#32620e"
+                   />
+            <Button 
+                ImageSource="setting.png"
+                BackgroundColor="Transparent"
+                HeightRequest="80"
+                WidthRequest="80"
+                Margin="0,-90,30,0"         
+                HorizontalOptions="End" 
+                x:Name="settingsButton"
+                Clicked="settingsButton_Clicked"/>
+            <Frame
+                BackgroundColor="#32620e"
+                CornerRadius="30"
+                Margin="30,0">
+                <CollectionView 
+                    x:Name="NotesCollectionView"
+                    SelectionMode="Single"
+                    SelectionChanged="OnNoteSelected"           
+                    ItemsSource="{Binding Properties}"
+                    >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame 
+                            Padding="10" 
+                            Margin="5" 
+                            BorderColor="Gray" 
+                            HasShadow="True" 
+                            CornerRadius="5">
+                                <StackLayout>
+                                    <Label 
+                                    Text="{Binding Title}" 
+                                    FontSize="20" />
+                                    <Label 
+                                    Text="{Binding Date}" 
+                                    FontSize="14" />
+                                    <Label 
+                                    Text="{Binding Content}" 
+                                    FontSize="12" 
+                                    MaxLines="3" />
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+            <Button 
+                ImageSource="more.png"
+                HeightRequest="90"
+                WidthRequest="90"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="20,10,20,0"
+                BackgroundColor="Transparent"
+                x:Name="addNote"
+                Clicked="addNote_Clicked"/>
+        </VerticalStackLayout>
+</ContentPage>

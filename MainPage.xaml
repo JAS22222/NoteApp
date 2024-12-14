@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="noteApp.MainPage">
+    <Grid>
+        <VerticalStackLayout
+            Margin="0,-40">
+            <Image
+                Source="logo.png"
+                HorizontalOptions="Center"
+                HeightRequest="200"
+                Margin="20" />
+            <Frame
+                BackgroundColor="#32620e"
+                HeightRequest="100"
+                >
+                <Label
+                    Text="NOTE FLOW"
+                    FontFamily="TNRB"
+                    FontSize="40"
+                    TextColor="White"
+                    HorizontalOptions="Center" />
+            </Frame>
+            <Button
+                Text="Get Started"
+                FontFamily="TNRB"
+                FontSize="20"
+                x:Name="getStartButton"
+                Clicked="getStartButton_Clicked"
+                BackgroundColor="Transparent"
+                TextColor="Black"
+                VerticalOptions="End"
+                Margin="0,500" />
+        </VerticalStackLayout>
+        <Frame 
+            x:Name="PinEntryFrame"
+            IsVisible="True"
+            BackgroundColor="#70FFFFFF"
+            Padding="20"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            CornerRadius="20"
+            Margin="0,0">
+            <VerticalStackLayout 
+                Spacing="20">
+                <Label
+                    Text="Enter PIN"
+                    FontSize="24"
+                    FontFamily="TNRB"
+                    HorizontalOptions="Center" />
+                <HorizontalStackLayout 
+                    x:Name="PinDisplayStack"
+                    Spacing="10"
+                    HorizontalOptions="Center">
+                    <Label x:Name="PinDigit1" FontSize="24" Text="_" />
+                    <Label x:Name="PinDigit2" FontSize="24" Text="_" />
+                    <Label x:Name="PinDigit3" FontSize="24" Text="_" />
+                    <Label x:Name="PinDigit4" FontSize="24" Text="_" />
+                </HorizontalStackLayout>
+
+                <Grid 
+                    ColumnDefinitions="Auto,Auto,Auto" 
+                    RowDefinitions="Auto,Auto,Auto,Auto" 
+                    Padding="10" 
+                    RowSpacing="10" 
+                    ColumnSpacing="10">
+                    <Button Text="1" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="0" 
+                            Grid.Column="0" 
+                            Clicked="PinButton_Clicked"/>
+                    <Button Text="2" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="0" 
+                            Grid.Column="1" 
+                            Clicked="PinButton_Clicked" />
+                    <Button Text="3" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="0" 
+                            Grid.Column="2" 
+                            Clicked="PinButton_Clicked"/>
+                    <Button Text="4" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="1" 
+                            Grid.Column="0" 
+                            Clicked="PinButton_Clicked"/>
+                    <Button Text="5" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="1" 
+                            Grid.Column="1" 
+                            Clicked="PinButton_Clicked"/>
+                    <Button Text="6" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="1" 
+                            Grid.Column="2" 
+                            Clicked="PinButton_Clicked"/>
+                    <Button Text="7" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="2" 
+                            Grid.Column="0" 
+                            Clicked="PinButton_Clicked" />
+                    <Button Text="8"
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="2" 
+                            Grid.Column="1" 
+                            Clicked="PinButton_Clicked" />
+                    <Button Text="9"
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="2" Grid.Column="2" 
+                            Clicked="PinButton_Clicked" />
+
+                    <Button Text="0" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="3" 
+                            Grid.Column="1" 
+                            Clicked="PinButton_Clicked" />
+
+                    <Button Text="⌫" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="3" 
+                            Grid.Column="0" 
+                            Clicked="Button_Clicked" />
+
+
+                    <Button Text="✔" 
+                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                            BackgroundColor="#32620e" 
+                            Grid.Row="3" 
+                            Grid.Column="2" 
+                            x:Name="Confirm"  
+                            Clicked="Confirm_Clicked" />
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="noteApp.SettingsPage"
+             >
+    <VerticalStackLayout>
+        <Frame
+            BackgroundColor="#32620e"
+            CornerRadius="45"
+            WidthRequest="300"
+            Margin="0,30">
+            <HorizontalStackLayout>
+                <Button
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=White}"
+                    ImageSource="arrow.png"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    CornerRadius="30"
+                    x:Name="backButton"
+                    Clicked="backButton_Clicked_1"
+                    />
+                <Label
+                    Text="SETTINGS"
+                    VerticalOptions="Center"
+                    Margin="10,0"
+                    FontSize="35"
+                    FontFamily="TNRB"
+                    TextColor="{AppThemeBinding Light=White, Dark=White}"
+                    Style="{StaticResource AppFontStyle}"
+                    />
+            </HorizontalStackLayout>
+        </Frame>
+        <Frame
+            BackgroundColor="#32620e"
+            Margin="60,0"
+            CornerRadius="30">
+            <VerticalStackLayout>
+                <Frame
+                    BackgroundColor="#70FFFFFF"                 
+                    BorderColor="Transparent"
+                    CornerRadius="20">
+                    <HorizontalStackLayout>
+                        <Switch                          
+                            x:Name="DarkModeSwitch" 
+                            Toggled="DarkModeSwitch_Toggled"
+                            ThumbColor="Black"
+                            Scale="1.5"
+                            Margin="30,0"
+                            OnColor="Black"                       
+                            />
+                        <Label
+                            Text="Dark Mode"
+                            TextColor="#32620e"
+                            FontSize="35"
+                            FontFamily="TNRB"
+                            Margin="-100,0"
+                            Style="{StaticResource AppFontStyle}"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame             
+                    BackgroundColor="#70FFFFFF"                 
+                    BorderColor="Transparent"
+                    CornerRadius="20"
+                    Margin="0,30,0,0">
+                    <VerticalStackLayout
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="Font Option"
+                            TextColor="#32620e"
+                            FontSize="35"
+                            FontFamily="TNRB"
+                            HorizontalOptions="Center"
+                            Style="{StaticResource AppFontStyle}"/>
+                        <Button
+                            Text="Arial"
+                            BackgroundColor="{StaticResource DefaultButtonBackgroundColor}"
+                            TextColor="#32620e"
+                            FontFamily="TNRB"
+                            FontSize="35"
+                            x:Name="arialButton"
+                            Clicked="arialButton_Clicked"
+                            Style="{StaticResource AppFontStyle}"
+                            />
+                        <Button
+                            Text="Times New Roman"
+                            BackgroundColor="{StaticResource DefaultButtonBackgroundColor}"
+                            TextColor="#32620e"
+                            FontFamily="TNRB"
+                            FontSize="35"
+                            HorizontalOptions="FillAndExpand"
+                            x:Name="timesnewromanButton"
+                            Clicked="timesnewromanButton_Clicked"
+                            Style="{StaticResource AppFontStyle}"
+                            />
+                        <Button
+                            Text="Garamond"
+                            BackgroundColor="{StaticResource DefaultButtonBackgroundColor}"
+                            TextColor="#32620e"
+                            FontFamily="TNRB"
+                            FontSize="35"
+                            x:Name="garamondButtonn"
+                            Clicked="garamondButtonn_Clicked"
+                            Style="{StaticResource AppFontStyle}"
+                            />
+                    </VerticalStackLayout>
+                </Frame>
+                <Button
+                    Text="Recently Deleted"
+                    FontFamily="TNRB"
+                    FontSize="35"
+                    BackgroundColor="#70FFFFFF"
+                    TextColor="#32620e"
+                    Margin="0,30"
+                    CornerRadius="20"
+                    HeightRequest="70"
+                    Style="{StaticResource AppFontStyle}"
+                    x:Name="recentButton"
+                    Clicked="recentButton_Clicked">
+                </Button>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
